@@ -15,12 +15,12 @@ fetch('prayer-times.csv')
 // Function to parse CSV data
 function parseCSV(csvData) {
     const lines = csvData.split('\n');
-    const header = lines[0].split(',').map(column => column.trim()); // Use comma as the delimiter for the header
+    const header = lines[0].split(';').map(column => column.trim()); // Use semicolon as the delimiter for the header
 
     const data = [];
 
     for (let i = 1; i < lines.length; i++) {
-        const row = lines[i].split(',').map(column => column.trim()); // Use comma as the delimiter for each row
+        const row = lines[i].split(';').map(column => column.trim()); // Use semicolon as the delimiter for each row
         data.push(row);
     }
 
