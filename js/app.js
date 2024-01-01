@@ -29,7 +29,7 @@ function parseCSV(csvData) {
 
 // Function to populate the table header
 function populateTableHeader(header) {
-    const tableHeader = document.getElementById('table-header');
+    const tableHeader = document.getElementById('prayer-times-header');
 
     // Create a row for the header
     const headerRow = document.createElement('tr');
