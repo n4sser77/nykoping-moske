@@ -1,0 +1,40 @@
+  /* Optional: Add custom styles here */
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+}
+
+.prayer-times-table {
+    margin-top: 20px;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.prayer-times-table th,
+.prayer-times-table td {
+    text-align: center;
+    padding: 10px;
+}
+
+.prayer-times-table th {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.prayer-times-table tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+}
+
+.result-container {
+    margin-top: 20px;
+}
+
+.result {
+    margin-bottom: 10px;
+}
