@@ -5,7 +5,7 @@ fetch('prayer-times.csv')
         // Parse CSV data
         const { header, data } = parseCSV(csvData);
 
-        // Update table header
+        // Populate table header
         populateTableHeader(header);
 
         // Populate table with prayer times
@@ -29,7 +29,7 @@ function parseCSV(csvData) {
 
 // Function to populate the table header
 function populateTableHeader(header) {
-    const tableHeader = document.getElementById('table-header');
+    const tableHeader = document.getElementById('prayer-times-header');
     const headerRow = document.createElement('tr');
 
     header.forEach(column => {
