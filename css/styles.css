@@ -52,10 +52,10 @@ body {
 
 /* Set a maximum width for the navbar */
 .navbar {
-    max-width: 100%;
+    max-width: 200%;
 }
 
 /* Set a maximum width for the footer */
 .footer {
-    max-width: 100%;
+    max-width: 200%;
 }
