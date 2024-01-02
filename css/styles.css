@@ -9,6 +9,7 @@
     border: 1px solid #dee2e6;
     border-radius: 5px;
     overflow: hidden;
+    max-height: 500px;
 }
 
 .prayer-times-table th,
