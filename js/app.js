@@ -1,3 +1,12 @@
+// Function to toggle the visibility of the table
+function toggleTableVisibility() {
+    const table = document.getElementById('prayer-times-table');
+    table.style.display = (table.style.display === 'none') ? 'table' : 'none';
+}
+
+// Add a click event listener to the h2 element
+document.getElementById('toggle-table').addEventListener('click', toggleTableVisibility);
+
 // Fetch CSV file and parse it
 fetch('prayer-times.csv')
     .then(response => response.text())
