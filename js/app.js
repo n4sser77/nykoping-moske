@@ -66,3 +66,15 @@ function populateTable(data) {
         tbody.appendChild(row);
     });
 }
+
+// Use the closest static parent to delegate the click event
+$('body').on('click', '[data-toggle="collapse"]', function() {
+    var target = $(this).attr('href');
+    $(target).collapse('toggle');
+});
+
+// Dynamically add elements
+// ...
+
+// Reinitialize Bootstrap after adding elements
+$('[data-toggle="collapse"]').collapse();
