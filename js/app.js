@@ -10,6 +10,9 @@ fetch('prayer-times.csv')
 
         // Populate table with prayer times
         populateTable(data);
+
+     // Reinitialize Bootstrap collapse after populating the table
+     $('[data-toggle="collapse"]').collapse();
     });
 
 // Function to parse CSV data
@@ -67,14 +70,8 @@ function populateTable(data) {
     });
 }
 
-// Use the closest static parent to delegate the click event
+// Use event delegation for dynamically added elements
 $('body').on('click', '[data-toggle="collapse"]', function() {
     var target = $(this).attr('href');
     $(target).collapse('toggle');
 });
-
-// Dynamically add elements
-// ...
-
-// Reinitialize Bootstrap after adding elements
-$('[data-toggle="collapse"]').collapse();
