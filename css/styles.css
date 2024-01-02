@@ -42,20 +42,6 @@ body {
 }
 
 .fts {
-    width: 100%;
-}
-
-/* Set a maximum width for the entire content */
-.container-fluid {
     max-width: 100%;
 }
 
-/* Set a maximum width for the navbar */
-.navbar {
-    max-width: 200%;
-}
-
-/* Set a maximum width for the footer */
-.footer {
-    max-width: 200%;
-}
