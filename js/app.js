@@ -13,7 +13,26 @@ fetch('prayer-times.csv')
 
      // Reinitialize Bootstrap collapse after populating the table
      $('[data-toggle="collapse"]').collapse();
+    
+
+     // Highlight current day
+     highlightCurrentDay();
     });
+
+// Function to highlight the current day
+function highlightCurrentDay() {
+    const currentDate = new Date();
+    const dayOfWeek = currentDate.getDay(); // 0 for Sunday, 1 for Monday, ..., 6 for Saturday
+
+    // Highlight the row corresponding to the current day
+    const tbody = document.getElementById('prayer-times-body');
+    const rows = tbody.getElementsByTagName('tr');
+
+    // Check if the current day is within the available rows
+    if (dayOfWeek < rows.length) {
+        rows[dayOfWeek].classList.add('current-day-highlight'); // Add your custom highlight class
+    }
+}
 
 // Function to parse CSV data
 function parseCSV(csvData) {
