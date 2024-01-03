@@ -45,3 +45,9 @@ body {
     max-width: 100%;
 }
 
+.current-day-highlight {
+    background-color: #ffc107; /* Yellow background for highlighting */
+    color: #000; /* Black text on the highlighted row */
+    font-weight: bold; /* Make the text bold for better visibility */
+}
+
