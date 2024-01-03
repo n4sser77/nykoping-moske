@@ -11,26 +11,48 @@ fetch('prayer-times.csv')
         // Populate table with prayer times
         populateTable(data);
 
-     // Reinitialize Bootstrap collapse after populating the table
-    // $('[data-toggle="collapse"]').collapse();
-    
-
-     // Highlight current day
-     highlightCurrentDay();
+        // Highlight current day
+        highlightCurrentDay();
     });
 
 // Function to highlight the current day
 function highlightCurrentDay() {
     const currentDate = new Date();
-    const dayOfWeek = currentDate.getDay(); // 0 for Sunday, 1 for Monday, ..., 6 for Saturday
+    const currentMonth = currentDate.getMonth() + 1; // Months are zero-indexed, so we add 1
+    const currentDayOfMonth = currentDate.getDate();
+
+    // Map month abbreviations to numerical representations
+    const monthAbbreviations = {
+        'Jan': 1,
+        'Feb': 2,
+        'Mar': 3,
+        'Apr': 4,
+        'May': 5,
+        'Jun': 6,
+        'Jul': 7,
+        'Aug': 8,
+        'Sep': 9,
+        'Oct': 10,
+        'Nov': 11,
+        'Dec': 12
+    };
 
     // Highlight the row corresponding to the current day
     const tbody = document.getElementById('prayer-times-body');
     const rows = tbody.getElementsByTagName('tr');
 
-    // Check if the current day is within the available rows
-    if (dayOfWeek < rows.length) {
-        rows[dayOfWeek].classList.add('current-day-highlight'); // Add your custom highlight class
+    for (let i = 0; i < rows.length; i++) {
+        const columns = rows[i].getElementsByTagName('td');
+
+        // Check if the month and day match the current date
+        if (
+            columns.length > 0 &&
+            columns[0].textContent.trim() === currentDayOfMonth.toString() &&
+            monthAbbreviations[columns[1].textContent.trim()] === currentMonth
+        ) {
+            rows[i].classList.add('current-day-highlight'); // Add your custom highlight class
+            break; // Exit the loop once the match is found
+        }
     }
 }
 
@@ -88,9 +110,3 @@ function populateTable(data) {
         tbody.appendChild(row);
     });
 }
-
-// Use event delegation for dynamically added elements
-//$('body').on('click', '[data-toggle="collapse"]', function() {
-//  var target = $(this).attr('href');
-//    $(target).collapse('toggle');
-//});
