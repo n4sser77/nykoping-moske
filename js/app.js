@@ -12,7 +12,7 @@ fetch('prayer-times.csv')
         populateTable(data);
 
      // Reinitialize Bootstrap collapse after populating the table
-     $('[data-toggle="collapse"]').collapse();
+    // $('[data-toggle="collapse"]').collapse();
     
 
      // Highlight current day
@@ -90,7 +90,7 @@ function populateTable(data) {
 }
 
 // Use event delegation for dynamically added elements
-$('body').on('click', '[data-toggle="collapse"]', function() {
-    var target = $(this).attr('href');
-    $(target).collapse('toggle');
-});
+//$('body').on('click', '[data-toggle="collapse"]', function() {
+//  var target = $(this).attr('href');
+//    $(target).collapse('toggle');
+//});
