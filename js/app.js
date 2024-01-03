@@ -37,23 +37,33 @@ function highlightCurrentDay() {
         'Dec': 12
     };
 
-    // Highlight the row corresponding to the current day
-    const tbody = document.getElementById('prayer-times-body');
-    const rows = tbody.getElementsByTagName('tr');
+   // Highlight the row corresponding to the current day
+   const tbody = document.getElementById('prayer-times-body');
+   const rows = tbody.getElementsByTagName('tr');
 
-    for (let i = 0; i < rows.length; i++) {
-        const columns = rows[i].getElementsByTagName('td');
+   for (let i = 0; i < rows.length; i++) {
+       const columns = rows[i].getElementsByTagName('td');
 
-        // Check if the month and day match the current date
-        if (
-            columns.length > 0 &&
-            columns[0].textContent.trim() === currentDayOfMonth.toString() &&
-            monthAbbreviations[columns[1].textContent.trim()] === currentMonth
-        ) {
-            rows[i].classList.add('current-day-highlight'); // Add your custom highlight class
-            break; // Exit the loop once the match is found
-        }
-    }
+       // Check if the month and day match the current date
+       console.log(
+           'Checking row',
+           i,
+           'Day in CSV:',
+           columns.length > 0 ? columns[0].textContent.trim() : 'N/A',
+           'Month in CSV:',
+           columns.length > 1 ? columns[1].textContent.trim() : 'N/A'
+       );
+
+       if (
+           columns.length > 0 &&
+           columns[0].textContent.trim() === currentDayOfMonth.toString() &&
+           monthAbbreviations[columns[1].textContent.trim()] === currentMonth
+       ) {
+           rows[i].classList.add('current-day-highlight'); // Add your custom highlight class
+           console.log('Match found. Highlighting row', i);
+           break; // Exit the loop once the match is found
+       }
+   }
 }
 
 // Function to parse CSV data
