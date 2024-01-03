@@ -18,52 +18,32 @@ fetch('prayer-times.csv')
 // Function to highlight the current day
 function highlightCurrentDay() {
     const currentDate = new Date();
-    const currentMonth = currentDate.getMonth() + 1; // Months are zero-indexed, so we add 1
-    const currentDayOfMonth = currentDate.getDate();
+    const currentMonthAbbreviation = 'Jan'; // Specify the month abbreviation to look for
 
-    // Map month abbreviations to numerical representations
-    const monthAbbreviations = {
-        'Jan': 1,
-        'Feb': 2,
-        'Mar': 3,
-        'Apr': 4,
-        'May': 5,
-        'Jun': 6,
-        'Jul': 7,
-        'Aug': 8,
-        'Sep': 9,
-        'Oct': 10,
-        'Nov': 11,
-        'Dec': 12
-    };
+    // Highlight the row corresponding to the specified month
+    const tbody = document.getElementById('prayer-times-body');
+    const rows = tbody.getElementsByTagName('tr');
 
-   // Highlight the row corresponding to the current day
-   const tbody = document.getElementById('prayer-times-body');
-   const rows = tbody.getElementsByTagName('tr');
+    for (let i = 0; i < Math.min(3, rows.length); i++) {
+        const columns = rows[i].getElementsByTagName('td');
 
-   for (let i = 0; i < rows.length; i++) {
-       const columns = rows[i].getElementsByTagName('td');
+        // Check if the specified month is found
+        if (columns.length > 0 && columns[0].textContent.trim() === currentMonthAbbreviation) {
+            const dayColumnIndex = columns.findIndex(column => column.textContent.trim() === 'Dag');
 
-       // Check if the month and day match the current date
-       console.log(
-           'Checking row',
-           i,
-           'Day in CSV:',
-           columns.length > 0 ? columns[0].textContent.trim() : 'N/A',
-           'Month in CSV:',
-           columns.length > 1 ? columns[1].textContent.trim() : 'N/A'
-       );
+            if (dayColumnIndex !== -1) {
+                const dayOfMonth = currentDate.getDate();
+                const dayValue = rows[i + 1].getElementsByTagName('td')[dayColumnIndex].textContent.trim();
 
-       if (
-           columns.length > 0 &&
-           columns[0].textContent.trim() === currentDayOfMonth.toString() &&
-           monthAbbreviations[columns[1].textContent.trim()] === currentMonth
-       ) {
-           rows[i].classList.add('current-day-highlight'); // Add your custom highlight class
-           console.log('Match found. Highlighting row', i);
-           break; // Exit the loop once the match is found
-       }
-   }
+                // Highlight the corresponding day if it matches the current day
+                if (parseInt(dayValue, 10) === dayOfMonth) {
+                    rows[i + 1].classList.add('current-day-highlight'); // Add your custom highlight class
+                    console.log(`Match found. Highlighting day ${dayOfMonth} in row ${i + 1}`);
+                    break; // Exit the loop once the match is found
+                }
+            }
+        }
+    }
 }
 
 // Function to parse CSV data
