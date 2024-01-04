@@ -3,14 +3,15 @@
     font-family: 'Arial', sans-serif;
     background-color: #f8f9fa;
     max-width: 100%;
+    position: relative
+    overflow-x: hidden;
 }
 
-html, body {
+/* Prevent horz scroll (works on saffari and chrome*/
+html {
     overflow-x: hidden;
   }
-  body {
-    position: relative
-  }
+ 
   
 
 .prayer-times-table {
