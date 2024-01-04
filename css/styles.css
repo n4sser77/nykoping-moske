@@ -2,7 +2,16 @@
   body {
     font-family: 'Arial', sans-serif;
     background-color: #f8f9fa;
+    max-width: 100%;
 }
+
+html, body {
+    overflow-x: hidden;
+  }
+  body {
+    position: relative
+  }
+  
 
 .prayer-times-table {
     margin-top: 20px;
