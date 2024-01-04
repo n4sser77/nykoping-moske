@@ -15,36 +15,6 @@ fetch('prayer-times.csv')
         highlightCurrentDay();
     });
 
-// Function to highlight the current day
-function highlightCurrentDay() {
-    const currentDate = new Date();
-    const currentMonthAbbreviation = 'Jan'; // Specify the month abbreviation to look for
-
-    // Highlight the row corresponding to the specified month
-    const tbody = document.getElementById('prayer-times-body');
-    const rows = tbody.getElementsByTagName('tr');
-
-    for (let i = 0; i < Math.min(3, rows.length); i++) {
-        const columns = rows[i].getElementsByTagName('td');
-
-        // Check if the specified month is found
-        if (columns.length > 0 && columns[0].textContent.trim() === currentMonthAbbreviation) {
-            const dayColumnIndex = columns.findIndex(column => column.textContent.trim() === 'Dag');
-
-            if (dayColumnIndex !== -1) {
-                const dayOfMonth = currentDate.getDate();
-                const dayValue = rows[i + 1].getElementsByTagName('td')[dayColumnIndex].textContent.trim();
-
-                // Highlight the corresponding day if it matches the current day
-                if (parseInt(dayValue, 10) === dayOfMonth) {
-                    rows[i + 1].classList.add('current-day-highlight'); // Add your custom highlight class
-                    console.log(`Match found. Highlighting day ${dayOfMonth} in row ${i + 1}`);
-                    break; // Exit the loop once the match is found
-                }
-            }
-        }
-    }
-}
 
 // Function to parse CSV data
 function parseCSV(csvData) {
@@ -99,4 +69,35 @@ function populateTable(data) {
         // Append the row to the table body
         tbody.appendChild(row);
     });
+}
+
+// Function to highlight the current day
+function highlightCurrentDay() {
+    const currentDate = new Date();
+    const currentMonthAbbreviation = 'Jan'; // Specify the month abbreviation to look for
+
+    // Highlight the row corresponding to the specified month
+    const tbody = document.getElementById('prayer-times-body');
+    const rows = tbody.getElementsByTagName('tr');
+
+    for (let i = 0; i < Math.min(3, rows.length); i++) {
+        const columns = rows[i].getElementsByTagName('td');
+
+        // Check if the specified month is found
+        if (columns.length > 0 && columns[0].textContent.trim() === currentMonthAbbreviation) {
+            const dayColumnIndex = columns.findIndex(column => column.textContent.trim() === 'Dag');
+
+            if (dayColumnIndex !== -1) {
+                const dayOfMonth = currentDate.getDate();
+                const dayValue = rows[i + 1].getElementsByTagName('td')[dayColumnIndex].textContent.trim();
+
+                // Highlight the corresponding day if it matches the current day
+                if (parseInt(dayValue, 10) === dayOfMonth) {
+                    rows[i + 1].classList.add('current-day-highlight'); // Add your custom highlight class
+                    console.log(`Match found. Highlighting day ${dayOfMonth} in row ${i + 1}`);
+                    break; // Exit the loop once the match is found
+                }
+            }
+        }
+    }
 }
