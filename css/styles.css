@@ -4,14 +4,16 @@
     font-family: 'Arial', sans-serif;
     background-color: #f8f9fa;
     max-width: 100%;
-    position: relative
+   /* position: relative */
+   
 }
 
 /* Prevent horz scroll (works on saffari and chrome*/
-html, body {
+
+/*    html, body {
     overflow-x: hidden;
   }
- 
+ */
   
 
 .prayer-times-table {
