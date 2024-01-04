@@ -20,7 +20,7 @@ html, body {
     border-radius: 5px;
     overflow: hidden;
     max-height: 500px;
-    max-width: 300px;
+    max-width: 100%;
 }
 
 .prayer-times-table th,
@@ -53,8 +53,7 @@ body {
 }
 
 .fts {
-    max-width: 300px;
-    width: 300px;
+    max-width: 100%;
 }
 
 .current-day-highlight {
