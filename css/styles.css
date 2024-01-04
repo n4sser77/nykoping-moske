@@ -1,4 +1,5 @@
   /* Optional: Add custom styles here */
+ 
   body {
     font-family: 'Arial', sans-serif;
     background-color: #f8f9fa;
@@ -20,7 +21,7 @@ html {
     border-radius: 5px;
     overflow: hidden;
     max-height: 500px;
-    max-width: 100%;
+    max-width: 300px;
 }
 
 .prayer-times-table th,
@@ -53,7 +54,7 @@ body {
 }
 
 .fts {
-    max-width: 100%;
+    max-width: 300px;
 }
 
 .current-day-highlight {
