@@ -72,8 +72,13 @@
             <h2>Bönetider</h2>
             <!-- Prayer Times Table -->
     <div class="container-fluid">
-        <!-- <button type="button" class="btn btn-primary btn-block" data-toggle="collapse" data-target="#prayertable">Januari 2024</button> -->
-        <div id="prayertable">
+
+<!-- Add this button wherever you want in your HTML -->
+<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#prayerTable" aria-controls="prayerTable" aria-expanded="false" aria-label="Toggle prayer table">
+    Toggle Prayer Table
+</button>
+
+        <div id="prayerTable">
             <table class="table table-bordered table-striped prayer-times-table">
              <thead class="bg-primary text-white" id="prayer-times-header">
                 <!-- Table header will be dynamically filled here -->
