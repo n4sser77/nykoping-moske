@@ -81,7 +81,10 @@ function highlightCurrentDay() {
     const row = tbody.querySelector(`tr:nth-child(${dayOfMonth})`);
 
     if (row) {
-        row.classList.add('current-day-highlight'); // Add your custom highlight class
+        const cells = row.getElementsByTagName('td');
+        for (let i = 0; i < cells.length; i++) {
+            cells[i].classList.add('current-day-highlight'); // Add your custom highlight class to each cell
+        }
         console.log(`Match found. Highlighting day ${dayOfMonth}`);
     }
 }
