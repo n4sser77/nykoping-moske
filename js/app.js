@@ -78,18 +78,10 @@ function highlightCurrentDay() {
 
     // Highlight the row corresponding to the current day
     const tbody = document.getElementById('prayer-times-body');
-    const rows = tbody.getElementsByTagName('tr');
+    const row = tbody.querySelector(`tr:nth-child(${dayOfMonth})`);
 
-    for (let i = 0; i < Math.min(3, rows.length); i++) {
-        const columns = rows[i].getElementsByTagName('td');
-
-        // Check the first column for numbers
-        const firstColumnValue = parseInt(columns[0].textContent.trim(), 10);
-
-        if (!isNaN(firstColumnValue) && firstColumnValue === dayOfMonth) {
-            rows[i].classList.add('current-day-highlight'); // Add your custom highlight class
-            console.log(`Match found. Highlighting day ${dayOfMonth} in row ${i}`);
-            break; // Exit the loop once the match is found
-        }
+    if (row) {
+        row.classList.add('current-day-highlight'); // Add your custom highlight class
+        console.log(`Match found. Highlighting day ${dayOfMonth}`);
     }
 }
