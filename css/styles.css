@@ -64,6 +64,7 @@ body {
     font-weight: bold; /* Make the text bold for better visibility */
 }
 
-.navbg{
+.navbg {
     background-color: #065584db;
+    background-color: -webkit-linear-gradient(#065584db, #065584db);
 }
