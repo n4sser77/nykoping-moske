@@ -14,7 +14,11 @@
     overflow-x: hidden;
   }
  */
-  
+
+ header {
+    margin-bottom: 20px;
+ }
+ #header_C
 
 .prayer-times-table {
     margin-top: 20px;
