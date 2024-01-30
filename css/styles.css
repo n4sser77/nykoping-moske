@@ -65,6 +65,51 @@ body {
 }
 
 .navbg {
-    background-color: #065584db;
-    background-color: -webkit-linear-gradient(#065584db, #065584db);
+    background-color: #0c580ce1;
+    background-color: -webkit-linear-gradient(#0c580ce1, #0c580ce1);
+}
+
+.quranic-verse {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .arabic-text {
+    font-size: 24px; /* Adjust the font size as needed */
+    line-height: 1.5; /* Adjust the line height as needed */
+    margin-bottom: 10px;
+    font-family: 'Traditional Arabic', sans-serif; /* Use a traditional Arabic font */
+  }
+  
+  .translation-text {
+    font-size: 18px; /* Adjust the font size as needed */
+    line-height: 1.3; /* Adjust the line height as needed */
+    color: #666; /* Set a color for the translation text */
+  }
+
+  .bg_img {
+    background-image: url("moske_bild.jpeg");
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+  }
+
+.bild {
+    max-height: 400px;
+    margin-top: 10px;
+    opacity: 0.9;
+    border-radius: 20px;
+    border: 3px solid #0c580ce1;
+}
+
+.bild-container {
+    max-height: 800px;
+    max-width: 800px;
+    margin-top: 80px;
+    opacity: 0.9;
+    border-radius: 20px;
+    padding: 50px;
+    border: 5px solid #0c580ce1;
 }
