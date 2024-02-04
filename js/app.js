@@ -1,5 +1,12 @@
+// Get current month
+const date = new Date();
+const month = date.toLocaleString('default', { month: 'short' }).toLowerCase();
+
+const prayer_times = `prayer-times-${month}csv`;
+
+
 // Fetch CSV file and parse it
-fetch('prayer-times.csv')
+fetch(prayer_times)
     .then(response => response.text())
     .then(csvData => {
         // Parse CSV data
@@ -83,8 +90,12 @@ function highlightCurrentDay() {
     if (row) {
         const cells = row.getElementsByTagName('td');
         for (let i = 0; i < cells.length; i++) {
-            cells[i].classList.add('current-day-highlight'); // Add your custom highlight class to each cell
+            cells[i].style.backgroundColor = 'skyblue'; // Change the background color to yellow
+            cells[i].style.fontWeight = 'bold'; // Make the text bold   
         }
-        console.log(`Match found. Highlighting day ${dayOfMonth}`);
+        console.log(`Match found. Highlighting day ${dayOfMonth}, ${prayer_times}, month: ${month}`);
+        
     }
 }
+
+
