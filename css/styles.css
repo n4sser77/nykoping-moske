@@ -127,7 +127,6 @@ body {
     text-align: center;
     padding: 5px;
     margin-right: 20px;
-
     border-radius: 5px;
     width: 375px; 
     height: 150px; 
@@ -136,13 +135,14 @@ body {
 
 
 
-@media (max-width:1000px) {
+@media (max-width:400px) {
     #stödja {
         width: 100vw;
         height: 150px;
         opacity: 0.8;
         backdrop-filter: blur(1px);
         margin: 0;
+        margin-bottom: ;
 
 
 
@@ -150,3 +150,19 @@ body {
     }
     
 }
+@media (max-width:1300px) {
+    #stödja {
+        width: 100vw;
+        height: 150px;
+        opacity: 0.8;
+        backdrop-filter: blur(1px);
+        margin-left: auto;
+        margin-right: auto;
+
+
+
+
+    }
+    
+}
+
