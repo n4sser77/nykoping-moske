@@ -125,10 +125,8 @@ body {
     background-color: #0c580ce1;
     color: snow;
     text-align: center;
-    padding: 5px;
-    margin-right: 20px;
     border-radius: 5px;
-    width: 375px; 
+    width: 359px; 
     height: 150px; 
     opacity: 0.9;
 }
@@ -142,6 +140,7 @@ body {
         opacity: 0.8;
         backdrop-filter: blur(1px);
         margin: 0;
+        overflow-x: hidden;
 
 
     }

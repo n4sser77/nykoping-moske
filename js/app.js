@@ -91,12 +91,19 @@ function highlightCurrentDay() {
     if (row) {
         const cells = row.getElementsByTagName('td');
         for (let i = 0; i < cells.length; i++) {
-            cells[i].style.backgroundColor = 'skyblue'; // Change the background color to yellow
-            cells[i].style.fontWeight = 'bold'; // Make the text bold   
+            cells[i].style.backgroundColor = 'skyblue'; // Change the background color to red
+            cells[i].style.fontWeight = 'bold'; // Make the text bold  
+            cells[i].style.color = 'darkgreen';  
         }
         console.log(`Match found. Highlighting day ${dayOfMonth}, ${prayer_times_csv}, month: ${month}`);
         
     }
 }
 
+//Function to display time in 24 hour format
+function formatTime(time) {
+    const [hours, minutes] = time.split(':');
+    return `${hours}:${minutes}`;
+
+}
 
