@@ -1,7 +1,13 @@
 // Get current month
 const months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
+
+const headerMonths = ['Januari', 'Februari', 'Mars', 'April', 'Maj', 'Juni', 'Juli', 'Augusti', 'September', 'Oktober', 'November', 'December'];
+
 const date = new Date();
 const month = months[date.getMonth()];
+const headerMonth = headerMonths[date.getMonth()];
+
+document.getElementById('hM').innerHTML = headerMonth;
 
 const prayer_times_csv = `prayer-times-${month}.csv`;
 
