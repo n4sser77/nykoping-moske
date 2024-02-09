@@ -7,7 +7,9 @@ const date = new Date();
 const month = months[date.getMonth()];
 const headerMonth = headerMonths[date.getMonth()];
 
-document.getElementById('hM').innerHTML = headerMonth;
+const year = date.getFullYear();
+
+document.getElementById('date').innerHTML = headerMonth + ' ' + year;
 
 const prayer_times_csv = `prayer-times-${month}.csv`;
 
