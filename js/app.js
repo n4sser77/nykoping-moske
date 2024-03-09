@@ -3,6 +3,9 @@ const months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', '
 
 const headerMonths = ['Januari', 'Februari', 'Mars', 'April', 'Maj', 'Juni', 'Juli', 'Augusti', 'September', 'Oktober', 'November', 'December'];
 
+const hijriDate = new Intl.DateTimeFormat('en-u-ca-islamic', { month: 'long' }).format(new Date());
+console.log(hijriDate); // Output will be the current Hijri month in long format
+
 const date = new Date();
 const month = months[date.getMonth()];
 const headerMonth = headerMonths[date.getMonth()];
@@ -11,7 +14,14 @@ const year = date.getFullYear();
 
 document.getElementById('hM').innerHTML = headerMonth + ' ' + year;
 
-const prayer_times_csv = `prayer-times-${month}.csv`;
+let prayer_times_csv;
+
+if (hijriDate.toLowerCase() === 'ramadan') {
+    prayer_times_csv = `prayer-times-ramadan.csv`;
+} else {
+    prayer_times_csv = `prayer-times-${month}.csv`;
+}
+
 
 
 // Fetch CSV file and parse it
