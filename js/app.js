@@ -8,18 +8,22 @@ console.log(hijriDate); // Output will be the current Hijri month in long format
 
 const date = new Date();
 const month = months[date.getMonth()];
-const headerMonth = headerMonths[date.getMonth()];
 
 const year = date.getFullYear();
 
 document.getElementById('hM').innerHTML = headerMonth + ' ' + year;
 
 let prayer_times_csv;
+let headerMonth;
 
 if (hijriDate.toLowerCase() === 'ramadan') {
     prayer_times_csv = `prayer-times-ramadan.csv`;
+    headerMonth = "Ramadan";
+    
 } else {
     prayer_times_csv = `prayer-times-${month}.csv`;
+    headerMonth = headerMonths[date.getMonth()];
+
 }
 
 
