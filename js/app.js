@@ -11,10 +11,9 @@ const month = months[date.getMonth()];
 
 const year = date.getFullYear();
 
-document.getElementById('hM').innerHTML = headerMonth + ' ' + year;
-
 let prayer_times_csv;
 let headerMonth;
+
 
 if (hijriDate.toLowerCase() === 'ramadan') {
     prayer_times_csv = `prayer-times-ramadan.csv`;
@@ -26,6 +25,7 @@ if (hijriDate.toLowerCase() === 'ramadan') {
 
 }
 
+document.getElementById('hM').innerHTML = headerMonth + ' ' + year;
 
 
 // Fetch CSV file and parse it
